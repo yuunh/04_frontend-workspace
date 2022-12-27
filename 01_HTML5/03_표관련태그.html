@@ -2,6 +2,23 @@
 <html>
      <head>
         <title>표관련태그</title>
+        <style>
+            /* css 영역에서의 주석 */
+            thead {
+                background-color: magenta;
+                color: white;
+            }
+            tfoot {
+                background-color: darkgreen;
+                color: yellow;
+            }
+            #tt {
+                background-color: lightgrey;
+            }
+            button {
+                background-color: pink;
+            }
+        </style>
     </head>
     <body>
         <!--
@@ -57,6 +74,72 @@
             </tr>
         </table>
         <figure>테이블의 설명 또는 img의 설명을 표현할 때 주로 사용</figure>
+        
+        <hr>
+
+        <h1>표의 행과 열을 합치는 속성</h1>
+        <!--
+            셀(th,td) 태그의 속성을 이용해서 행 또는 열을 합칠 수 있음
+
+            colspan="2" : 2개의 열 합치기
+            rowspan="2" : 2개의 행 합치기
+        -->
+        <h3>이력서</h3>
+        <table border="1">
+            <tr>
+                <td colspan="2" rowspan="2" width="130px" height="130">사진</td>
+                <td width="80px">이름</td>
+                <td width="200px"></td>
+            </tr>
+            <tr>
+                <td>연락처</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td width="70px" height="50">주소</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td width="130px" height="130">자기소개</td>
+                <td colspan="3"></td>
+            </tr>
+        </table>
+        
+        <hr>
+
+        <h1>테이블내에 구조 나누기</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+            <tbody id="tt">
+                <tr>
+                    <td>차은우</td>
+                    <td>23</td>
+                    <td><button>서울</button></td>
+                </tr>
+                <tr>
+                    <td>주지훈</td>
+                    <td>30</td>
+                    <td><button>부산</button></td>
+                </tr>
+                <tr>
+                    <td>아이유</td>
+                    <td>22</td>
+                    <td><button>광주</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2">총인원</th>
+                    <td>3명</td>
+                </tr>
+            </tfoot>
+        </table>
     </body>
 </html>
    
