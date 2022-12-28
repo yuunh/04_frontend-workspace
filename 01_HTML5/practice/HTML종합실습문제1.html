@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML종합실습문제1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <form action="test.do">
+        고객명 : <input type="text" name="name"> <br><br>
+        전화번호 : <input type="phone" name="phone"> <br><br>
+        E-mail : <input type="email" name="email"> <br><br>
+
+        주소 : 
+        <select name="address">
+            <option>서울</option>
+            <option>경기</option>
+            <option>인천</option>
+        </select> 
+
+        <input type="radio" name="addr" id="addr"> 
+        <label for="addr">이 주소 다음에도 사용</label> <br><br>
+
+
+        수량 : <input type="number" name="amount" min="1" max="10" value="1">
+        <br><br>
+
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="radio" name="size" id="small" value="small">  
+            <label for="small">Small</label> <br><br>
+
+            <input type="radio" name="size" id="medium" value="medium">  
+            <label for="medium">Medium</label> <br><br>
+
+            <input type="radio" name="size" id="large" value="large">  
+            <label for="large">Large</label> <br><br>
+        </fieldset>
+        <br><br>
+
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="checkbox" name="topping" id="bacon" value="bacon">
+            <label for="bacon">베이컨</label> <br><br>
+
+            <input type="checkbox" name="topping" id="cheese" value="cheese">
+            <label for="cheese">치즈</label> <br><br>
+
+            <input type="checkbox" name="topping" id="onion" value="onion">
+            <label for="onion">양파</label> <br><br>
+
+            <input type="checkbox" name="topping" id="mushroom" value="mushroom">
+            <label for="mushroom">버섯</label> <br><br>
+        </fieldset>
+        <br>
+
+        희망 배송 시간 : <input type="time" name="time"> <br><br>
+
+        <input type="radio" name="disposable" id="disposable"> 
+        <label for="disposable">일회용품 안 주셔도 돼요</label> <br><br>
+
+        배송 시 요청사항 : <textarea></textarea>
+
+        <br><br>
+
+        결제 수단 <br>
+        <input type="radio" name="pay" id="pay1">
+        <label for="pay1">KH페이</label> <br>
+
+        <input type="radio" name="pay" id="pay2">
+        <label for="pay2">다른 결제 수단</label> <br>
+
+        <select name="pay" id="pay2">
+            <option>신용/체크카드</option>
+            <option>휴대폰결제</option>
+            <option>네이버페이</option>
+            <option>카카오페이</option>
+            <option>토스페이</option>
+        </select>
+
+        <br><br>
+        <input type="submit" value="주문하기"> 
+
+        </form>
+    
+    </body>
+</html>
