@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 관련 스타일</title>
+    <style>
+        #div-bg{
+            background-color: antiquewhite;
+            padding: 20px;
+            border: 30px solid burlywood;
+            width: 50%; /*테두리 빼고 컨텐츠만*/
+            border-radius: 50px;
+        }
+
+        .div-test{
+            margin: 30px;
+            background-color: lightsteelblue;
+            border: 5px dashed mediumturquoise;
+            padding: 20px;
+        }
+
+        #div1{background-clip: border-box;}
+        #div2{background-clip: padding-box;}
+        #div3{background-clip: content-box;}
+    </style>
+</head>
+<body style="background-color: skyblue;">
+    <h1>배경 관련 스타일 (background~)</h1>
+
+    <h3>background-color : 배경색 지정하고자 할 때 사용</h3>
+
+    <div id="div-bg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus adipisci laborum, amet maxime neque, minima temporibus maiores saepe libero fugit possimus voluptatibus, molestias incidunt! Accusamus impedit hic eligendi vitae aliquam?
+    </div>
+
+    <hr>
+
+    <h3>background-clip : 배경을 적용시키고자 하는 범위를 지정할 때 사용</h3>
+    <pre>
+    선택자{
+        background-clip : border-box(기본값) | padding-box | content-box
+    }
+    </pre>
+
+    <div class="div-test" id="div1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro corporis aliquid consectetur libero aliquam sed, amet fugiat dolor laborum totam cumque accusantium sint aspernatur, tempora facere cupiditate, cum consequuntur ad.</div>
+    <div class="div-test" id="div2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores mollitia voluptatem numquam est alias eius, consequatur accusantium, ut explicabo architecto sapiente distinctio saepe similique suscipit voluptatum inventore quisquam, dolor sint?</div>
+    <div class="div-test" id="div3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci corrupti consequuntur fugit laudantium alias dicta voluptatibus inventore, nostrum quibusdam hic tenetur minus. Commodi repellendus quas cum reiciendis qui doloremque placeat?</div>
+</body>
+</html>
