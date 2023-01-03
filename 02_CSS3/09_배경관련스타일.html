@@ -24,6 +24,31 @@
         #div1{background-clip: border-box;}
         #div2{background-clip: padding-box;}
         #div3{background-clip: content-box;}
+
+        #test{
+            border: 1px solid black;
+            width: 70%;
+            height: 800px;
+
+            background-image: url(resources/image/bgsample.PNG);
+            background-repeat: repeat; /*기본값*/
+            background-repeat: repeat-x;
+            background-repeat: repeat-y;
+            background-repeat: no-repeat;
+            background-size: auto; /*기본값*/
+            background-size: contain;
+            background-size: cover;
+            background-size: 300px 200px;
+            background-size: 50% 50%;
+            background-position: left top; /*기본값*/
+            background-position: right top;
+            background-position: right bottom;
+            background-position: center bottom;
+            background-position: center center;
+            background-position: 50% 50%; /*가운데정렬*/
+            background-attachment: scroll; /*기본값*/
+            background-attachment: fixed;
+        }
     </style>
 </head>
 <body style="background-color: skyblue;">
@@ -47,5 +72,23 @@
     <div class="div-test" id="div1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro corporis aliquid consectetur libero aliquam sed, amet fugiat dolor laborum totam cumque accusantium sint aspernatur, tempora facere cupiditate, cum consequuntur ad.</div>
     <div class="div-test" id="div2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores mollitia voluptatem numquam est alias eius, consequatur accusantium, ut explicabo architecto sapiente distinctio saepe similique suscipit voluptatum inventore quisquam, dolor sint?</div>
     <div class="div-test" id="div3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci corrupti consequuntur fugit laudantium alias dicta voluptatibus inventore, nostrum quibusdam hic tenetur minus. Commodi repellendus quas cum reiciendis qui doloremque placeat?</div>
+
+    <hr>
+
+    <h3>배경 이미지 테스트</h3>
+    <pre>
+    선택자{
+        background-image:url("이미지 경로");
+        background-repeat|repeat-x|repeat-y|no-repeat;
+        background-size:auto|contain|cover|px px|% %;
+        background-position:좌/우/가운데 |px px|% %;
+        background-attachment:scroll|fixed;
+    }
+    </pre>
+
+    <!-- #test 하면 기본적으로 div 생성 -->
+    <div id="test"></div>
+
+
 </body>
 </html>
