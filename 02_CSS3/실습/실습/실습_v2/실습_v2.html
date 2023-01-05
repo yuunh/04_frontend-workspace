@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>실습_2</title>
     <style>
-        div,input{
-            /* border: 1px solid black; */
+        div{
+            /* border: 1px solid gray; */
             box-sizing: border-box;
         }
-        
+
         .wrap{
             width: 1000px;
             height: 800px;
@@ -19,10 +20,9 @@
 
         .wrap>div{width: 100%;}
 
-        
         #header{height: 15%; margin: 5px; border: 1px solid gray;}
         #navigator{height: 5%; margin: 5px; border: 1px solid gray;}
-        #content{height: 60%;}
+        #content{height: 60%; margin: 5px;}
         #footer{height: 20%; margin: 5px; border: 1px solid gray;}
 
         #header>div, #content>div{
@@ -30,18 +30,25 @@
             float: left;
         }
 
+        /* header */
         #h1, #h3{width: 20%;}
         #h2{width: 60%;}
 
+        #h1{
+            display: flex;
+            justify-content: center;
+        }
         #h1>img{
-            padding: 30px;
+            width: 60%;
+            margin: auto;
+            display: block;
         }
 
         #h2{position: relative;}
 
         #search_form{
             width: 80%;
-            height: 20%;
+            height: 30%;
             margin: auto;
             position: absolute;
             top: 0;
@@ -56,69 +63,78 @@
         }
 
         #search_text{width: 80%;}
-        #search_btn{width: 20%; border: 1px outset grey;}
+        #search_btn{width: 20%; border: 1px outset rgb(0, 0, 0);}
 
         #search_form input{
             width: 100%;
             height: 100%;
+            box-sizing: border-box;
         }
 
-        /* navigator */
-        #navi{
+        #search_btn>input{
+            background-image: url(image/search.png);
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px 20px;
+        }
+
+         /* navigator */
+         #navi{
             list-style-type: none;
             padding: 0;
             margin: 0;
             height: 100%;
         }
-
+        
         #navi>li{
             float: left;
             width: 20%;
-            height: 100%;
             text-align: center;
         }
-        
-        #navi a{
+
+        ul a{
             text-decoration: none;
             color: gray;
-            font-size: 15px;
-            font-weight: 550;
-            width: 100%;
-            height: 100%;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 35px;
             display: block;
-            line-height: 40px;
         }
 
         /* content */
         #c1{width: 75%;}
         #c2{width: 25%;}
 
-        #c1>div{width: 100%;}
+        #c1>div{width: 99%;}
         #c2>div{width: 100%;}
-        #banner, #login{height: 30%; margin: 5px; border: 1px solid gray;}
-        #notice{height: 10%; margin: 5px; border: 1px solid gray;}
-        #car{height: 60%; margin: 5px; border: 1px solid gray;}
-        #shopping{height: 70%; margin: 5px; border: 1px solid gray;}
 
-        #banner>img{width: 748px; height: 142px;}
-        #car>img{width: 743px; height: 282;}
-        #shopping>img{width: 245px; height: 330px;}
+        #banner{height: 30%; margin: 0 5px 5px 0; border: 1px solid gray;}
+        #login{height: 30%; margin: 0 5px 5px 0; border: 1px solid gray;}
+        #notice{height: 10%; margin: 0 5px 5px 0; border: 1px solid gray;}
+        #car{height: 58%; margin: 0 5px 5px 0; border: 1px solid gray;}
+        #shopping{height: 69%; margin: 0 5px 5px 0; border: 1px solid gray;}
+
+        #banner>img{width: 740px; height: 142px;}
+        #car>img{width: 740px; height: 282;}
+        #shopping>img{width: 245px; height: 329px;}
 
         #notice>div{height: 100%; float: left;}
         #n1{width: 80%;}
-        #n2{width: 20%;}
+        #n2{width: 20%; padding: 10px;}
 
         #n1>p{
             width: 100%;
             box-sizing: border-box;
             font-size: 12px;
             color: black;
+            margin: 13px 0 0 13px;
         }
 
         #n2>a{
             text-decoration: none;
             color: black;
-            vertical-align: middle;
             font-size: 12px;
         }
 
@@ -150,13 +166,13 @@
 
         /* footer */
         #footer>div{width: 100%;}
-        #f1{height: 20%;}
+        #f1{height: 20%; padding: 5px;}
         #f2{height: 80%;}
 
         #f1>a{
             text-decoration: none;
             color: black;
-            font-weight: 600;
+            font-weight: 500;
             margin: 15px;
             vertical-align: middle;
         }
@@ -178,28 +194,32 @@
             text-align: center;
         }
 
-        
 
     </style>
 </head>
+
 <body>
     <div class="wrap">
         <div id="header">
             <div id="h1">
                 <img src="image/logo.PNG">
             </div>
+
             <div id="h2">
                 <form action="" id="search_form">
                     <div id="search_text">
                         <input type="text" name="keyword">
                     </div>
                     <div id="search_btn">
-                        <input type="image" src="image/search.png" value="submit">
+                        <input type="submit" value=" ">
+                        <!-- <input type="image" src="image/search.png" value="submit" id="btn_"> -->
                     </div>
                 </form>
             </div>
+
             <div id="h3"></div>
         </div>
+
         <div id="navigator">
             <ul id="navi">
                 <li><a href="#">교육과정</a></li>
@@ -209,6 +229,7 @@
                 <li><a href="#">상담센터</a></li>
             </ul>
         </div>
+
         <div id="content">
             <div id="c1">
                 <div id="banner">
@@ -228,6 +249,7 @@
                     <img src="image/car.PNG">
                 </div>
             </div>
+
             <div id="c2">
                 <div id="login">
                     <form action="" id="login_form">
@@ -250,6 +272,7 @@
                 </div>
             </div>
         </div>
+
         <div id="footer">
             <div id="f1">
                 <a href="#">이용약관</a> |
@@ -269,7 +292,6 @@
             </div>
         </div>
     </div>
-
-    
 </body>
+
 </html>
