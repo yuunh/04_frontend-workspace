@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_html요소접근</title>
+    <style>
+        .area{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>1. 색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들어 보세요</h1>
+    
+    <div id="area1" class="area" style="background-color: black;"></div>
+
+    <input type="color" id="changeColor">
+    <button onclick="changeColor();">변경</button>
+
+    <script>
+        function changeColor() {
+            var area1 = document.getElementById("area1");
+            var color = document.getElementById("changeColor");
+
+            console.log(color);
+            console.dir(color);
+
+            area1.style.backgroundColor = color.value;
+        }
+    </script>
+    <hr>
+
+    <h1>2. 버튼에 따라 크기 조절이 가능하게 만들기</h1>
+
+    <div id="area2" class="area" style="background-color: black;"></div>
+
+    <button onclick="shrink();">50x50</button>
+    <button onclick="org();">원본(100x100)</button>
+    <button onclick="enlarge();">200x200</button>
+
+    <script>
+        function shrink() {
+            var area2 = document.getElementById("area2");
+
+            area2.style.width = "50px";
+            area2.style.height = "50px";
+        }
+        function org() {
+            var area2 = document.getElementById("area2");
+
+            area2.style.width = "100px";
+            area2.style.height = "100px";
+        }
+        function enlarge() {
+            var area2 = document.getElementById("area2");
+
+            area2.style.width = "200px";
+            area2.style.height = "200px";
+        }
+    </script>
+</body>
+</html>
