@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0111</title>
     <style>
-        form, #tab {
+        form, #tab2 {
             width: 800px;
         }
         thead, tfoot{
@@ -22,7 +22,7 @@
     <form action="insert.no" method="post">
         <fieldset>
             <legend>공지사항 작성하기</legend>
-            <table border="0">
+            <table id="tab1" border="0">
                 <tr>
                     <td align="center"><b>제목</b></td>
                     <td><input type="text" name="title" size="28" placeholder="제목을 입력하시오." required></td>
@@ -44,7 +44,7 @@
         </fieldset>
     </form>
     <br><hr><br>
-    <table id="tab" border="1">
+    <table id="tab2" border="1">
         <thead>
             <tr style="height: 35px;">
                 <th style="width: 5%;">번호</th>
