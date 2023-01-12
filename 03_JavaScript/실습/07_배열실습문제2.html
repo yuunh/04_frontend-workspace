@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열실습문제2</title>
+    <style>
+        #area {
+            border: 1px solid black;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>배열 실습 문제 2</h1>
+    <fieldset>
+        <legend>보기</legend>
+        <label id="stringla1">r b</label><br>
+        <label id="stringla2">e v o l</label><br>
+    </fieldset><br><br>
+    <div id="area"></div><br>
+    <button onclick="array2();">처리</button>
+
+    <script>
+        function array2() {
+            const la1 = document.getElementById("stringla1").innerHTML.split();
+            const la2 = document.getElementById("stringla2").innerHTML.split();
+
+            la1.reverse();
+            
+            const arr1 = [la1];
+            const arr2 = [la2];
+            
+            const area = document.getElementById("area");
+
+            area.innerHTML += arr1.reverse();
+            area.innerHTML += arr2.reverse();
+        }
+    </script>
+    
+</body>
+</html>

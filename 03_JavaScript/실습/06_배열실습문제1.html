@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열실습문제1</title>
+</head>
+<body>
+    <h1>배열 실습 문제 1</h1>
+    <fieldset>
+        <legend>보기</legend> 
+        <label id="la1">사과,바나나,당근</label><br>
+        <label id="la2">김밥,치즈,떡볶이,햄버거</label><br>
+        <label id="la3">환타,사이다,콜라</label><br>
+        <label id="la4">고양이,강아지</label><br>
+    </fieldset><br>
+    <input type="text" id="str" placeholder="찾을 문자열을 입력하세요.">
+    <button onclick="array1();">전송 및 처리</button>
+
+    <script>
+        function array1() {
+            const la1 = document.getElementById("la1").innerHTML.split(",");
+            const la2 = document.getElementById("la2").innerHTML.split(",");
+            const la3 = document.getElementById("la3").innerHTML.split(",");
+            const la4 = document.getElementById("la4").innerHTML.split(",");
+            
+            const arr = la1.concat(la2, la3, la4);
+
+            const str = document.getElementById("str");
+            const index = arr.indexOf(str);
+
+            if (index == -1) {
+                alert("존재하지 않습니다.");
+            } else {
+                alert(str + "는 배열 index " + index + "번재에 존재합니다.");
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>
