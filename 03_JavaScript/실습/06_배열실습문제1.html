@@ -15,25 +15,34 @@
         <label id="la3">환타,사이다,콜라</label><br>
         <label id="la4">고양이,강아지</label><br>
     </fieldset><br>
-    <input type="text" id="str" placeholder="찾을 문자열을 입력하세요.">
-    <button onclick="array1();">전송 및 처리</button>
+
+    <input type="text" id="findInput" placeholder="찾을 문자열을 입력하세요.">
+    <button onclick="array();">전송 및 처리</button>
 
     <script>
-        function array1() {
-            const la1 = document.getElementById("la1").innerHTML.split(",");
-            const la2 = document.getElementById("la2").innerHTML.split(",");
-            const la3 = document.getElementById("la3").innerHTML.split(",");
-            const la4 = document.getElementById("la4").innerHTML.split(",");
-            
-            const arr = la1.concat(la2, la3, la4);
+        function array() {
+            let str = "";
+            for (let i = 1; i <= 4; i++) {
+                str += document.getElementById("la" + i).innerHTML;
+                str += ",";
+            }
+            console.log(str);
+            // 사과,바나나,당근,김밥,치즈,떡볶이,햄버거,환타,사이다,콜라,고양이,강아지,
 
-            const str = document.getElementById("str");
-            const index = arr.indexOf(str);
+            const arr = str.split(",");
+            console.log(arr); 
+            // 배열에 잘 담김. 근데 컴마 뒤에 요소가 있다고 생각해서 12번에 공백이 담겨있음
+
+            arr.pop(); // 12번 인덱스 제거
+            console.log(arr);
+
+            const findInput = document.getElementById("findInput");
+            let index = arr.indexOf(findInput.value);
 
             if (index == -1) {
                 alert("존재하지 않습니다.");
             } else {
-                alert(str + "는 배열 index " + index + "번재에 존재합니다.");
+                alert(findInput.value + "는 배열 index " + index + "번째에 존재합니다.");
             }
         }
     </script>

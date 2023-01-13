@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 실습 문제 4</title>
+    <style>
+        div {
+            border: 1px solid brown;
+            width: 900px; height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>배열 실습 문제 4</h1>
+    <fieldset>
+        <legend>보기</legend>
+        <label id="food">피자 치킨 당근 햄버거 떡볶이</label>
+    </fieldset><br>
+
+    <input type="text" id="del" placeholder="삭제할 음식 이름을 입력하세요.">
+    <input type="text" id="add" placeholder="추가할 음식 이름을 입력하세요.">
+    <br><br>
+
+    <div id="result">이 부분에 정답이 출력될 수 있도록 하세요.</div><br>
+    <button onclick="array();">처리 및 출력</button>
+
+    <script>
+        function array() {
+            // div 요소 선택
+            let divEl = document.getElementById("result");
+
+            // 음식 담을 변수
+            let food = document.getElementById("food").innerHTML.split(" ");
+            console.log(food);
+
+            // 입력받은 값 담을 변수
+            let del = document.getElementById("del").value;
+            let add = document.getElementById("add").value;
+
+            // 삭제할 음식의 인덱스를 담을 변수
+            let index = food.indexOf(del);
+            console.log(index);
+
+            // splice(시작인덱스, 제거개수) 삭제할 음식 인덱스 찾아서 제거
+            food.splice(index, 1);
+            console.log(food);
+
+            // 추가할 음식을 배열의 마지막 요소에 추가 => push()
+            food.push(add);
+            console.log(food);
+
+            // 결과값 출력
+            divEl.innerHTML = food;
+        }
+    </script>
+</body>
+</html>
