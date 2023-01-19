@@ -114,11 +114,17 @@
             const h3Arr = document.getElementsByTagName("h3"); 
             // h3의 요소들이 배열로 담김 => [h3요소객체, h3요소객체, h3요소객체, ....]
             // h3Arr.style.backgroundColor = "yellow"; // 배열에 담겨있기 때문에 이렇게 하면 안됨
+            
             /*
             for (let i in h3Arr) {
+                console.log(i);
                 h3Arr[i].style.backgroundColor = "yellow";
             }
-            */
+            */ // for 문이 length까지 돌아서 오류남 왜?... 몰루.....
+           
+            for (let i = 0; i < h3Arr.length; i++) {
+                h3Arr[i].style.backgroundColor = "yellow";
+            }
 
             // > jQuery 방식
             $("h3").css("backgroundColor", "yellow");
