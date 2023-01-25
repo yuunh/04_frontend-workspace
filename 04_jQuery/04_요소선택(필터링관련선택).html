@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.3.min.js"></script>
+</head>
+
+<body>
+    <h3>* 필터 관련 선택자</h3>
+
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>혈액형</th>
+            <th>거주지</th>
+        </tr>
+        <tr>
+            <td>문동은</td>
+            <td>A형</td>
+            <td>서울</td>
+        </tr>
+        <tr>
+            <td>박연진</td>
+            <td>B형</td>
+            <td>경기도</td>
+        </tr>
+        <tr>
+            <td>전재준</td>
+            <td>O형</td>
+            <td>부산</td>
+        </tr>
+        <tr>
+            <th colspan="2">총인원</th>
+            <td>3명</td>
+        </tr>
+    </table>
+
+    <script>
+        $(function () {
+            // 첫번째 인덱스 선택하고 싶다면?
+            $("tr:first").css("backgroundColor", "black").css("color", "white");
+            
+            // 마지막 인덱스 선택하고 싶다면?
+            $("tr:last").css({ backgroundColor: "red", color: "white" });
+
+            // 짝수번째 인덱스에 있는 거 선택하고 싶다면?
+            $("tr:even").css("backgroundColor", "lightgray"); // 0, 2, 4번 선택
+
+            // 홀수번째 인덱스에 있는 거 선택하고 싶다면? 
+            $("tr:odd").css("backgroundColor", "yellow"); // 1, 3번 선택
+            
+            // 특정 요소 걸러서 선택하는 것 => 필터 관련 선택자
+        });
+    </script>
+
+    <hr>
+
+    <h3>* 필터링과 관련된 메소드</h3>
+    <p>
+        기준이 되는 요소 중에서 특정 요소만을 걸러서 선택해주는 메소드 <br>
+        first(), last(), filter(), eq(), not()
+    </p>
+
+    <!-- h4.test{test-$}*6 -->
+    <h4 class="test">test-1</h4>
+    <h4 class="test">test-2</h4>
+    <h4 class="test">test-3</h4>
+    <h4 class="test">test-4</h4>
+    <h4>test-5</h4>
+    <h4 class="test">test-6</h4>
+
+    <script>
+        $(function() {
+            $("h4").first().css("fontSize", "20px");
+            $("h4").last().css("fontSize", "30px");
+
+            // test-5(클래스가 없는)를 제외한 것들을 선택하고 싶다면?
+            $("h4").filter(".test").html("ㅎㅎㅎㅎㅎ"); // 클래스가 test인 것 선택
+
+            $("h4").not(".test").css("color", "red"); // 클래스가 test가 아닌 것 선택
+
+            // test-3 선택하고 싶다면? (별다른 특성이 딱히 없음)
+            $("h4").eq(2).text("eq로 선택됨");
+            // innerHTML => html(), innerText=> text()
+        });
+    </script>
+</body>
+
+</html>
