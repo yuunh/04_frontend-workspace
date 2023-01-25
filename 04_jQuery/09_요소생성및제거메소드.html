@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +11,29 @@
         .added {
             color: palegreen;
         }
+
+        .item {
+            background-color: yellowgreen;
+            widows: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            /*높이랑 같은 크기 지정해주면 정가운데 배치됨*/
+            margin: 5px;
+        }
+
+        .item span {
+            font-size: 25px;
+            color: white;
+            font-weight: bolder;
+        }
+
+        .purple {
+            background-color: purple;
+        }
     </style>
 </head>
+
 <body>
     <h1>요소 생성 및 제거</h1>
 
@@ -21,8 +43,8 @@
     <div id="area1"></div>
 
     <script>
-        $(function() {
-            $("#btn").click(function() {
+        $(function () {
+            $("#btn").click(function () {
                 // <p>~~~~~</p>
 
                 // 1. 문자열로 만드는 방법
@@ -40,7 +62,7 @@
                 console.log(el1);
                 console.log(el2);
                 console.log(el3);
-                
+
                 $("#area1").append(el1, el2, el3); // 자손으로 여러개 추가
             });
         });
@@ -99,7 +121,49 @@
         $("<span class='added'>B</spna>").insertAfter("#test4");
     </script>
 
-    
-    
+    <hr>
+
+    <h3>* 요소 객체 복제 메소드</h3>
+
+    <p>
+        변수 = $("선택자").clone([true|"false"]) : 선택된 요소를 복제해서 반환해주는 메소드 <br>
+        true|false : 복제할 요소에 걸려있는 이벤트까지도 복사한 건지 지정 (기본값 : false)
+    </p>
+
+    <div id="clone_test">
+
+        <!-- 복제할 요소 -->
+        <div id="item1" class="item">
+            <span>안뇽</span>
+        </div>
+    </div>
+
+    <button id="clone">복제</button>
+
+    <div id="clone-result"></div>
+
+    <script>
+        $(function () {
+            // 복제할 요소에 hover 이벤트 (마우스엔터 + 마우스아웃)
+            $(".item").hover(function() {
+                $(this).addClass("purple");
+            }, function() {
+                $(this).removeClass("purple");
+            });
+
+            // 복제 버튼 클릭 시 #item1 요소 복사해서 또 다른 div에 붙여넣기
+            $("#clone").click(function() {
+                // const copy = $("#item1").clone(); // 기본값 false 이벤트 복사 안됨
+                
+                // const copy = $("#item1").clone(true);
+                // $("#clone-result").append(copy);
+                
+                // 위의 두 줄을 한 줄로!
+                $("#clone-result").append($("#item1").clone(true)); // part1 방식
+                // $("#item1").clone(true).append("#clone-result"); // part2 방식
+            });
+        })
+    </script>
 </body>
+
 </html>
