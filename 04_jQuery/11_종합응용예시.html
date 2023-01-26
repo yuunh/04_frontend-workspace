@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.3.min.js"></script>
+    <style>
+        tbody>tr:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 핵핵 어려움 주의 !!! -->
+
+    <h2>게시판 리스트</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>조회수</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3</td>
+                <td>세번째 글 제목</td>
+                <td>user01</td>
+                <td>23</td>
+                <td>2023-01-26</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>두번째 글 제목</td>
+                <td>user02</td>
+                <td>14</td>
+                <td>2022-12-25</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>첫번째 글 제목</td>
+                <td>admin</td>
+                <td>159</td>
+                <td>2022-01-02</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+
+    선택된 게시글 정보 :
+    <span id="s0">글번호</span> /
+    <span id="s1">제목</span> /
+    <span id="s2">작성자</span> /
+    <span id="s3">조회수</span> /
+    <span id="s4">작성일</span>
+
+    <script>
+        $(function() {
+            $("tbody>tr").click(function() {
+                // 콘솔에 찍어보기
+                /*
+                console.log($(this).children().eq(0).text());
+                console.log($(this).children().eq(1).text());
+                console.log($(this).children().eq(2).text());
+                */
+
+                // [td, td, td, td, td]
+                $(this).children().each(function(index, el) {
+                    // index : 순차적으로 접근되는 인덱스 수
+                    // el    : 순차적으로 접근되는 요소객체 (td) => 순수 자바스크립트 방식
+                    console.log($(el).text());
+
+                    $("#s" + index).text($(el).text());
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
