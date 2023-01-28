@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 실습 문제 3</title>
+    <style>
+        div {
+            border: 1px solid brown;
+            width: 900px; height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>배열 실습 문제 3</h1>
+    <fieldset>
+        <legend>입력</legend>
+        <input type="text" id="input1">
+        <button onclick="array();">입력</button>
+    </fieldset><br>
+
+    <div id="area">이 부분에 정답이 출력될 수 있도록 하세요.</div>
+
+    <script>
+        let arr = [];
+        let input1 = document.getElementById("input1");
+        let area = document.getElementById("area");
+
+        function array() { 
+            arr.push(input1.value); // 내가 입력한 값 추가
+            console.log(arr);
+
+            input1.value = "";
+            
+            area.innerHTML = arr.toString();
+        }
+    </script>
+    
+</body>
+</html>

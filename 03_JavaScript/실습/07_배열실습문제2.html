@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>배열실습문제2</title>
     <style>
-        #area {
-            border: 1px solid black;
-            height: 20px;
+        div {
+            border: 1px solid brown;
+            width: 900px; height: 20px;
         }
     </style>
 </head>
@@ -18,24 +18,38 @@
         <legend>보기</legend>
         <label id="stringla1">r b</label><br>
         <label id="stringla2">e v o l</label><br>
-    </fieldset><br><br>
-    <div id="area"></div><br>
-    <button onclick="array2();">처리</button>
+    </fieldset><br>
+
+    <div id="area">이 부분에 정답이 출력될 수 있도록 하세요.</div><br>
+    <button onclick="array();">처리</button>
 
     <script>
-        function array2() {
-            const la1 = document.getElementById("stringla1").innerHTML.split();
-            const la2 = document.getElementById("stringla2").innerHTML.split();
-
-            la1.reverse();
+        function array() {
+            let str = "";
+            str = document.getElementById("stringla1").innerHTML;
+            console.log(str);
             
-            const arr1 = [la1];
-            const arr2 = [la2];
+            let arr1 = str.split(" "); // 공백 제거 후 배열에 담음
+            console.log(arr1); // ['r', 'b']
+
+            arr1.reverse(); // 거꾸로
+            console.log(arr1); // ['b', 'r']
+
+            str = document.getElementById("stringla2").innerHTML;
+            let arr2 = str.split(" "); 
+            arr2.reverse();
             
             const area = document.getElementById("area");
 
-            area.innerHTML += arr1.reverse();
-            area.innerHTML += arr2.reverse();
+            area.innerHTML = "" // 디브에 입력했던거 초기화
+
+            let finalArr = arr1.concat(arr2); 
+            // arr1과 arr2를 결합하고 원본에 영향을 끼치지 않기 때문에 배열에 담는다
+
+            for (let i in finalArr) {
+                area.innerHTML += finalArr[i];
+            }
+            
         }
     </script>
     
