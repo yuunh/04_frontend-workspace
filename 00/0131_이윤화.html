@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +10,9 @@
         form {
             width: 450px;
         }
-
-        
     </style>
 </head>
+
 <body>
     <form action="">
         <fieldset>
@@ -20,8 +20,8 @@
             <table border="0">
                 <tr>
                     <td>아이디</td>
-                    <td><input type="text"></td>
-                    <td><button>중복확인</button></td>
+                    <td><input type="text" id="userId"></td>
+                    <td><button onclick="id_check();">중복확인</button></td>
                 </tr>
                 <tr>
                     <td>비밀번호</td>
@@ -45,16 +45,33 @@
                     <td>
                         <div align="right">
                             <input type="reset" value="초기화">
-                            <input type="submit" value="회원가입">  
+                            <input type="submit" value="회원가입">
                         </div>
-                        
                     </td>
                     <td></td>
                 </tr>
             </table>
-            
+
         </fieldset>
     </form>
-    
+    첫글자는 영어 소문자로 시작하고
+    숫자, !, @, # 로만 이루어진 6~12글자
+
+    <script>
+        function id_check() {
+            const idInput = document.getElementById("userID");
+
+            let regExp = /^[a-z][a-z\d!@#]{5,11}/;
+
+            if (!regExp.test(idInput.value)) {
+
+            } else {
+                
+            }
+        };
+
+        function join() { }
+    </script>
 </body>
+
 </html>
