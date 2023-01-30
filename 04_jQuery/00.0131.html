@@ -21,33 +21,31 @@
             <table border="0">
                 <tr>
                     <td>아이디</td>
-                    <td><input type="text" id="userId"></td>
+                    <td><input type="text" id="userId" required></td>
                     <td><button onclick="id_check();">중복확인</button></td>
                 </tr>
                 <tr>
                     <td>비밀번호</td>
-                    <td><input type="password"></td>
+                    <td><input type="password" required></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>비밀번호확인</td>
-                    <td><input type="password"></td>
+                    <td><input type="password" required></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>지역</td>
-                    <td>서울<input type="radio">
-                        부산<input type="radio">
-                        대구<input type="radio"></td>
+                    <td>서울<input type="radio" class="area" name="area">
+                        부산<input type="radio" class="area" name="area">
+                        대구<input type="radio" class="area" name="area"></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>
-                        <div align="right">
+                    <td style="text-align: right;">
                             <input type="reset" value="초기화">
-                            <input type="submit" value="회원가입">
-                        </div>
+                            <input type="submit" value="회원가입">   
                     </td>
                     <td></td>
                 </tr>
@@ -60,19 +58,25 @@
 
     <script>
         function id_check() {
-            const idInput = document.getElementById("userId");
+            const userId = document.getElementById("userId");
 
-            let regExp = /^[a-z][a-z\d!@#]{5,11}/;
+            let regExp = /^[a-z][a-z\d!@#]{5,11}/i;
 
-            if (!regExp.test(idInput.value)) {
-                // $("#userId").css("background", "red");
+            if (!regExp.test(userId.value)) {
                 userId.style.backgroundColor = "red";
             } else {
-                $("#userId").css("background", "green");
+                userId.style.backgroundColor = "green";
             }
         };
 
-        function join() { }
+        function join() {
+            const area = document.getElementsByClassName("area");
+
+            if ($("input[name='area']:checked").length == 0) {
+                alert("지역을 선택해주세요");
+                return false;
+            }
+        }
     </script>
 </body>
 
