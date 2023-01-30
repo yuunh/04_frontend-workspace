@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        form { width: 450px;}
+    </style>
+</head>
+<body>
+    <form action="test.do">
+        <fieldset>
+            <legend>회원 가입 양식</legend>
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" id="userId" required></td>
+                    <td><input type="button" value="중복확인" onclick="return id_check();"></td>
+                </tr><tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" required></td>
+                    <td></td>
+                </tr><tr>
+                    <td>비밀번호확인</td>
+                    <td><input type="password" required></td>
+                    <td></td>
+                </tr><tr>
+                    <td>지역</td>
+                    <td>
+                        서울<input type="radio" class="area">
+                        부산<input type="radio" class="area">
+                        대구<input type="radio" class="area">
+                    </td>
+                    <td></td>
+                </tr><tr>
+                    <td></td>
+                    <td style="text-align: right;">
+                        <input type="reset">
+                        <input type="submit" value="회원가입" onclick="return join();">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+    <script>
+        function id_check() {
+            const inputId = document.getElementById("userId");
+
+            let regExp = /^[a-z][a-z\d!@#]{5,11}$/i;
+
+            if (regExp.test(inputId.value)) {
+                userId.style.backgroundColor = "green";
+            } else {
+                userId.style.backgroundColor = "red";
+            }
+        };
+
+        function join() {
+            const area = document.getElementsByClassName("area");
+
+            if ($("input[class='area']:checked").length == 0) {
+                alert("지역을 선택해주세요");
+                return false;
+            }
+        };
+    </script>
+    
+</body>
+</html>
