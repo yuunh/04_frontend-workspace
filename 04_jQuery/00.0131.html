@@ -22,7 +22,7 @@
                 <tr>
                     <td>아이디</td>
                     <td><input type="text" id="userId" required></td>
-                    <td><button onclick="id_check();">중복확인</button></td>
+                    <td><button onclick="return id_check();">중복확인</button></td>
                 </tr>
                 <tr>
                     <td>비밀번호</td>
@@ -36,16 +36,17 @@
                 </tr>
                 <tr>
                     <td>지역</td>
-                    <td>서울<input type="radio" class="area" name="area">
-                        부산<input type="radio" class="area" name="area">
-                        대구<input type="radio" class="area" name="area"></td>
+                    <td>서울<input type="radio" class="area">
+                        부산<input type="radio" class="area">
+                        대구<input type="radio" class="area"></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td style="text-align: right;">
-                            <input type="reset" value="초기화">
-                            <input type="submit" value="회원가입">   
+                            <input type="reset">
+                            <button type="submit" onclick="return join();">회원가입</button>
+                            <!-- <input type="submit" value="회원가입" onclick="return join();">    -->
                     </td>
                     <td></td>
                 </tr>
@@ -53,26 +54,24 @@
 
         </fieldset>
     </form>
-    첫글자는 영어 소문자로 시작하고
-    숫자, !, @, # 로만 이루어진 6~12글자
 
     <script>
         function id_check() {
-            const userId = document.getElementById("userId");
+            const inputId = document.getElementById("userId");
 
-            let regExp = /^[a-z][a-z\d!@#]{5,11}/i;
+            let regExp = /^[a-z][a-z\d!@#]{5,11}$/i;
 
-            if (!regExp.test(userId.value)) {
-                userId.style.backgroundColor = "red";
-            } else {
+            if (regExp.test(inputId.value)) {
                 userId.style.backgroundColor = "green";
+            } else {
+                userId.style.backgroundColor = "red";
             }
         };
 
         function join() {
             const area = document.getElementsByClassName("area");
 
-            if ($("input[name='area']:checked").length == 0) {
+            if ($("input[class='area']:checked").length == 0) {
                 alert("지역을 선택해주세요");
                 return false;
             }
