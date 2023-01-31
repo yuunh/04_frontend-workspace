@@ -59,7 +59,7 @@
         function id_check() {
             const inputId = document.getElementById("userId");
 
-            let regExp = /^[a-z][a-z\d!@#]{5,11}$/i;
+            let regExp = /^[a-z][a-zA-Z\d!@#]{5,11}$/;
 
             if (regExp.test(inputId.value)) {
                 userId.style.backgroundColor = "green";
